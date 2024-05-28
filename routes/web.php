@@ -33,9 +33,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', function () {
         return view('pages.app.dashboard-simpadu', ['type_menu' => '']);
     })->name('home');
-    Route::resource('user', UserController::class);
-    Route::resource('subject', SubjectController::class);
-    Route::resource('schedule', ScheduleController::class);
+    Route::middleware('role:superadmin|admin')->resource('user', UserController::class);
+    Route::middleware('role:superadmin|admin')->resource('subject', SubjectController::class);
+    Route::middleware('role:superadmin|admin')->resource('schedule', ScheduleController::class);
 
 
 });

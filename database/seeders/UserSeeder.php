@@ -14,15 +14,34 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create();
+        // User::factory(10)->create();
+        $superadmin = User::create([
+            'name'=>'Owner',
+            'email'=>'superadmin@gmail.com',
+            'password'=>Hash::make('1234'),
+            'handphone'=>'',
+        ]);
+        $superadmin->assignRole('superadmin');
 
-        User::create([
+        $admin = User::create([
+            'name'=>'Admin',
+            'email'=>'admin@gmail.com',
+            'password'=>bcrypt('123'),
+            'handphone'=>''
+            
+        ]);
+        $admin->assignRole('admin');
+
+        $user = User::create([
             'name' => 'Muhammad Alpian Rizky',
             'email' => 'c030322123@mahasiswa.poliban.ac.id',
             'email_verified_at' => now(),
             'password' => Hash::make('987654321'),
-            'roles' => 'mahasiswa',
+            'handphone'=>''
+            
         ]);
+        $user ->assignRole('user');
         
+    
     }
 }

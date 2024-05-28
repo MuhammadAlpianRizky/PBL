@@ -4,49 +4,29 @@
             <a href="{{ route('home1') }}">Menu Awal</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('home1') }}">Awal</a>
+            <a href="{{ route('home1') }}">AC</a>
         </div>
         <ul class="sidebar-menu">
 
-            <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="#">Dashboard</a>
-                    </li>
-
-                </ul>
+            <li class="nav-item ">
+                <a href="{{ route('home1') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                
             </li>
-            <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Users</span></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="{{ route('user.index') }}">User List</a>
-                    </li>
-
-                </ul>
+            <li class="nav-item">
+                <a href="{{ route('user.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>User</span></a>
+            
             </li>
-            <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Subject</span></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="{{ route('subject.index') }}">Subject List</a>
-                    </li>
-                </ul>
+            <li class="nav-item">
+                <a href="{{ route('subject.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Subject</span></a>
+            
             </li>
-            <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Schedule</span></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="{{ route('schedule.index') }}">Schedule List</a>
-                </ul>
+            <li class="nav-item">
+                <a href="{{ route('schedule.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Schedule</span></a>
+            
                 </li>
-                    <li class="nav-item dropdown ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Pesan</span></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="{{ route('order.index') }}">Masukkan Pesanan</a>
-                    </li>
+                    <li class="nav-item">
+                <a href="{{ route('order.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Pesan</span></a>
+            
             </li>
         </ul>   
         

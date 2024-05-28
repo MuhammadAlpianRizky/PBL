@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'New Schedule')
+@section('title', 'Pesanan Baru')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -22,120 +22,65 @@
                 
 
                 <div class="card">
-                    <form action="{{ route('schedule.store') }}" method="POST">
+                    <form action="{{ route('order.store') }}" method="POST">
                         @csrf
                         <div class="card-header">
-                            <h4>New Schedule</h4>
+                            <h4>Pesanan</h4>
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Subject</label>
+                                <label>Nama</label>
                                 <input type="text"
-                                    class="form-control @error('subject_id')
+                                    class="form-control @error('nama')
                                     is-invalid
                                 @enderror"
-                                    name="subject_id">
-                                @error('subject_id')
+                                    name="nama">
+                                @error('nama')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Day</label>
+                                <label>Alamat</label>
                                 <input type="text"
-                                    class="form-control @error('hari')
+                                    class="form-control @error('alamat')
                                     is-invalid
                                 @enderror"
-                                    name="hari">
-                                @error('hari')
+                                    name="alamat">
+                                @error('alamat')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Start Time</label>
-                                <input type="time"
-                                    class="form-control @error('jam_mulai')
+                                <label>No HP</label>
+                                <input type="numeric"
+                                    class="form-control @error('no_hp')
                                     is-invalid
                                 @enderror"
-                                    name="jam_mulai">
-                                @error('jam_mulai')
+                                    name="no_hp">
+                                @error('no_hp')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>End Time</label>
-                                <input type="time"
-                                    class="form-control @error('jam_selesai')
+                                <label>Tanggal</label>
+                                <input type="date"
+                                    class="form-control @error('tanggal')
                                     is-invalid
                                 @enderror"
-                                    name="jam_selesai">
-                                @error('jam_selesai')
+                                    name="tanggal">
+                                @error('tanggal')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Room</label>
-                                <input type="text"
-                                    class="form-control @error('ruangan')
-                                    is-invalid
-                                @enderror"
-                                    name="ruangan">
-                                @error('ruangan')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Atendance Code</label>
-                                <input type="text"
-                                    class="form-control @error('kode_absensi')
-                                    is-invalid
-                                @enderror"
-                                    name="kode_absensi">
-                                @error('kode_absensi')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Academic Year</label>
-                                <input type="text"
-                                    class="form-control @error('tahun_akademik')
-                                    is-invalid
-                                @enderror"
-                                    name="tahun_akademik">
-                                @error('tahun_akademik')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Semester</label>
-                                <div class="selectgroup w-100">
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="semester" value="Ganjil" class="selectgroup-input"
-                                            checked="">
-                                        <span class="selectgroup-button">Ganjil</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="semester" value="Genap" class="selectgroup-input">
-                                        <span class="selectgroup-button">Genap</span>
-                                    </label>
-
-                                </div>
-                            </div>
-
-                        </div>
+                            
                         <div class="card-footer text-right">
                             <button class="btn btn-primary">Submit</button>
                         </div>

@@ -58,7 +58,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>HandPhone</th>
-                                            <th>Created At</th>
+                                            <th>Roles</th>
                                             <th>Action</th>
                                         </tr>
                                         @foreach ($users as $user)
@@ -73,28 +73,50 @@
                                                     {{ $user->handphone }}
                                                 </td>
                                                 <td>
-                                                    {{ $user->created_at }}
+                                                    @if ($user->hasRole('admin'))
+                                                    Admin
+                                                @elseif ($user->hasRole('user'))
+                                                    User
+                                                @elseif ($user->hasRole('superadmin'))
+                                                    Super Admin
+                                                    @else
+                                                @endif
                                                 </td>
                                                 <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('user.edit', $user->id) }}'
-                                                            class="btn btn-sm btn-info btn-icon">
-                                                            <i class="fas fa-edit"></i>
-                                                            Edit
-                                                        </a>
-
-                                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST"
-                                                            class="ml-2">
-                                                            <input type="hidden" name="_method" value="DELETE" />
-                                                            <input type="hidden" name="_token"
-                                                                value="{{ csrf_token() }}" />
-                                                            <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                <i class="fas fa-times"></i> Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
+                                                    @if(auth()->user()->hasRole('superadmin'))
+                                                        @if($user->id !== auth()->user()->id) <!-- Menyembunyikan tombol delete jika superadmin mencoba menghapus dirinya sendiri -->
+                                                            <div class="d-flex justify-content-center">
+                                                                <a href='{{ route('user.edit', $user->id) }}' class="btn btn-sm btn-info btn-icon">
+                                                                    <i class="fas fa-edit"></i> Edit
+                                                                </a>
+                                                                @if ($user->hasRole('admin') || $user->hasRole('user'))
+                                                                    <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="ml-2">
+                                                                        @method('DELETE')
+                                                                        @csrf
+                                                                        <button class="btn btn-sm btn-danger btn-icon confirm-delete">
+                                                                            <i class="fas fa-times"></i> Delete
+                                                                        </button>
+                                                                    </form>
+                                                                @endif
+                                                            </div>
+                                                        @endif
+                                                    @elseif(auth()->user()->hasRole('admin'))
+                                                        @if($user->hasRole('user')) <!-- Hanya admin bisa mengedit bagian user -->
+                                                            <div class="d-flex justify-content-center">
+                                                                <a href='{{ route('user.edit', $user->id) }}' class="btn btn-sm btn-info btn-icon">
+                                                                    <i class="fas fa-edit"></i> Edit
+                                                                </a>
+                                                                <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="ml-2">
+                                                                    @method('DELETE')
+                                                                    @csrf
+                                                                    <button class="btn btn-sm btn-danger btn-icon confirm-delete">
+                                                                        <i class="fas fa-times"></i> Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        @endif
+                                                    @endif
                                                 </td>
-                                            </tr>
                                         @endforeach
                                     </table>
                                 </div>

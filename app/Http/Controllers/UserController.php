@@ -16,14 +16,15 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = DB::table('users')
-            ->when($request->input('name'), function ($query, $name) {
-                return $query->where('name', 'like', '%' . $name . '%');
-            })
-            ->select('id', 'name', 'email', 'handphone', DB::raw('DATE_FORMAT(created_at, "%d %M %Y")
-            as created_at'))
-            ->orderBy('id', 'desc')
-            ->paginate(5);
+        // $users = DB::table('users')
+        //     ->when($request->input('name'), function ($query, $name) {
+        //         return $query->where('name', 'like', '%' . $name . '%');
+        //     })
+        //     ->select('id', 'name', 'email', 'handphone', DB::raw('DATE_FORMAT(created_at, "%d %M %Y")
+        //     as created_at'))
+        //     ->orderBy('id', 'desc')
+        //     ->paginate(5);
+        $users = User::skip(1)->paginate(3);
         return view('pages.users.index', compact('users'));
     }
 
@@ -37,15 +38,18 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
 
-        User::create([
+        $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'roles' => $request['roles'],
             'handphone' => $request['handphone'],
-            'address' => $request['address'],
         ]);
-
+        if($request->roles === 'admin'){
+            $user->assignRole('admin');
+        }else{
+            $user->assignRole('user');
+        }
         return redirect(route('user.index'))->with('success', 'data berhasil disimpan');
     }
 
