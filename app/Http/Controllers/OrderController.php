@@ -11,8 +11,13 @@ class OrderController extends Controller
 {
     public function index()
     {
-    $orders = Order::paginate(2);
+    $orders = Order::orderBy('created_at', 'desc')->paginate(2);
     return view('pages.orders.index', ['orders' => $orders]);
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['edit', 'update', 'destroy']);
     }
     public function create()
     {

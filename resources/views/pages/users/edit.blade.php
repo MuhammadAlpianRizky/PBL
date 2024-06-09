@@ -21,7 +21,7 @@
             <div class="section-body">
 
                 <div class="card">
-                    <form action="{{ route('user.update', $user) }}" method="POST">
+                    <form action="{{ route('user.update', $user->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card-header">
@@ -30,37 +30,51 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="name" value="{{ $user->name }}">
+                                <input type="text"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name', $user->name) }}">
+                                @error('name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" name="email" value="{{ $user->email }}">
+                                <input type="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email', $user->email) }}">
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label>Handphone</label>
-                                <input type="text" class="form-control" name="handphone" value="{{ $user->handphone }}">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" name="handphone" value="{{ old('handphone', $user->handphone) }}">
                             </div>
+
                             <div class="form-group">
-                                <label>Roles</label>
-                                <select class="form-control" name="roles">
-                                    <option value="admin" @if ($user->roles == 'admin') selected @endif>Admin</option>
-                                    <option value="user" @if ($user->roles == 'user') selected @endif>User</option>
+                                <label for="roles">Role</label>
+                                <select name="roles" class="form-control" required>
+                                    <option value="user" {{ $user->hasRole('user') ? 'selected' : '' }}>User</option>
+                                    <option value="admin" {{ $user->hasRole('admin') ? 'selected' : '' }}>Admin</option>
+                                    <option value="superadmin" {{ $user->hasRole('superadmin') ? 'selected' : '' }}>Superadmin</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="card-footer text-right">
-                            <button class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>
-
             </div>
         </section>
     </div>
 @endsection
 
 @push('scripts')
-    <!-- JS Libraies -->
-
-    <!-- Page Specific JS File -->
+<!-- JS Libraries -->
+<script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
+<!-- Page Specific JS File -->
+<script src="{{ asset('js/page/features-posts.js') }}"></script>
 @endpush

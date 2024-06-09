@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -37,20 +38,22 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-
+        
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-            'roles' => $request['roles'],
             'handphone' => $request['handphone'],
         ]);
-        if($request->roles === 'admin'){
-            $user->assignRole('admin');
-        }else{
-            $user->assignRole('user');
+    
+        $roleName = $request['roles'];
+        $role = Role::where('name', $roleName)->first();
+    
+        if ($role) {
+            $user->assignRole($role->id);
         }
-        return redirect(route('user.index'))->with('success', 'data berhasil disimpan');
+    
+        return redirect(route('user.index'))->with('success', 'Data berhasil disimpan');
     }
 
     public function edit(User $user)
@@ -71,9 +74,17 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        $validate = $request->validated();
-        $user->update($validate);
-        return redirect()->route('user.index')->with('success', 'Edit User Successfully');
+        $validatedData = $request->validated();
+
+        // Update user details
+        $user->update($validatedData);
+
+        // Sync roles
+        if ($request->has('roles')) {
+            $user->syncRoles($request->input('roles'));
+        }
+
+        return redirect()->route('user.index')->with('success', 'User updated successfully');
     }
 
     /**

@@ -72,42 +72,29 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Roles</label>
-                                <div class="selectgroup w-100">
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="admin" class="selectgroup-input"
-                                            checked="">
-                                        <span class="selectgroup-button">Admin</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="dosen" class="selectgroup-input">
-                                        <span class="selectgroup-button">Dosen</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="mahasiswa" class="selectgroup-input">
-                                        <span class="selectgroup-button">Mahasiswa</span>
-                                    </label>
-
-                                </div>
+                                <label for="roles">Role</label>
+                                <select name="roles" class="form-control" required>
+                                    <option value="user">User</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="superadmin">Superadmin</option>
+                                </select>
                             </div>
-                            <div class="form-group mb-0">
-                                <label>Address</label>
-                                <textarea class="form-control" data-height="150" name="address"></textarea>
+                            <div class="card-footer text-right">
+                            <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
-                        </div>
-                        <div class="card-footer text-right">
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-
             </div>
-        </section>
+        </div>
     </div>
+</section>
+</div>
 @endsection
 
 @push('scripts')
-    <!-- JS Libraies -->
-
-    <!-- Page Specific JS File -->
+<!-- JS Libraries -->
+<script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
+<!-- Page Specific JS File -->
+<script src="{{ asset('js/page/features-posts.js') }}"></script>
 @endpush
