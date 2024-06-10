@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title', 'Services')
 
 @push('style')
@@ -17,14 +18,32 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-        background: url('{{ asset('img/image.png') }}') no-repeat center center;
-        background-size: cover;
+        /* background: url('{{ asset('img/image.png') }}') no-repeat center center;
+        background-size: cover; */
         padding: 50px 0;
     }
+    <style>
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
     
 </style>
 
 @section('main')
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="main-content">
         <section class="section">
             <div class="section-header">
@@ -32,28 +51,29 @@
             </div>
             <div class="services-section">
                 <div class="service-card">
-                    <img src="{{ asset('img/service.png') }}" alt="Service Icon">
+                    <img src="img/service.png" alt="Service Icon" class="mobile-image">
                     <h2>SERVICE / PERBAIKAN AC</h2>
                     <p>Siap berikan layanan terbaik untuk service AC Anda mulai dari Cuci AC, cek pressure freon, isi freon AC, hingga cek kondisi module dan parts. Siap perbaiki kerusakan AC ringan maupun berat sampai tuntas.</p>
                 </div>
                 <div class="service-card">
-                    <img src="{{ asset('img/bongkar-pasang.png') }}" alt="Installation Icon">
+                    <img src="img/bongkar-pasang.png" alt="Installation Icon" class="mobile-image">
                     <h2>BONGKAR PASANG AC</h2>
-                    <p>Cari jasa pasang AC baru atau perlu bongkar AC untuk dipindahkan ke tempat lain? Kami  siap bantu bongkar pasang AC termasuk mobilisasi AC ke lokasi baru. Dijamin Terpercaya.</p>
+                    <p>Cari jasa pasang AC baru atau perlu bongkar AC untuk dipindahkan ke tempat lain? Kami  siap bantu bongkar pasang AC termasuk mobilisasi AC ke lokasi baru. Dijamin Terpercaya.</p>
                 </div>
                 <div class="service-card">
-                    <img src="{{ asset('img/sales.png') }}" alt="Sales Icon">
+                    <img src="img/sales.png" alt="Sales Icon" class="mobile-image">
                     <h2>PENJUALAN AC BEKAS</h2>
                     <p>Anda membutuhkan AC bekas untuk rumah atau kantor? Di web kami melayani penjualan AC bekas harga terjangkau, berkualitas dan bergaransi (by request).</p>
                 </div>
                 <div class="service-card">
-                    <img src="{{ asset('img/kulkas.png') }}" alt="Fridge Icon">
+                    <img src="img/kulkas.png" alt="Fridge Icon" class="mobile-image">
                     <h2>SERVICE KULKAS</h2>
                     <p>Solusi Tepat Bagi Anda Yang Mengalami Masalah Dengan Lemari Es 1 Pintu, 2 Pintu Dan Mesin Refrigerator Lainnya Seperti Chiller, Freezer Dan Showcase Dari Berbagai Merk Dan Type.</p>
                 </div>
             </div>
         </section>
     </div>
+</body>
     <div class="main-content">
         <section class="section">
             <div class="section-header2">
