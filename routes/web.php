@@ -25,8 +25,12 @@ Route::get('/login', function () {
     return view('pages.auth.auth-login', ['type_menu' => '']);
 })->name('login');
 Route::resource('mahasiswa',MahasiswaController::class);
+Route::get('/contact',function(){
+    return view('pages.contact.contact',['type_menu'=>'']);
+})->name('kontak');
 
 Route::resource('order', OrderController::class);
+Route::resource('auth',AuthController::class);
 
 Route::middleware(['auth'])->group(function () {
 

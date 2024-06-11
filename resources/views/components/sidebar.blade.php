@@ -7,28 +7,26 @@
             <a href="{{ route('home1') }}">AC</a>
         </div>
         <ul class="sidebar-menu">
-
-            <li class="nav-item ">
+            <li class="nav-item">
                 <a href="{{ route('home1') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                
             </li>
+            @role('admin|superadmin')
             <li class="nav-item">
                 <a href="{{ route('user.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>User</span></a>
-            
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('subject.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Subject</span></a>
-            
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="{{ route('schedule.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Schedule</span></a>
-            
-                </li>
-                    <li class="nav-item">
+            </li>
+            @endrole
+            <li class="nav-item">
                 <a href="{{ route('order.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Pesan</span></a>
-            
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('kontak') }}" class="nav-link"><i class="fas fa-fire"></i><span>Kontak</span></a>
             </li>
         </ul>   
-        
     </aside>
 </div>

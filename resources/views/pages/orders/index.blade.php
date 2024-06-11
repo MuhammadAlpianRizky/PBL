@@ -20,7 +20,6 @@
                 </div>
             </div>
             <div class="section-body">
-
                 <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
@@ -37,9 +36,8 @@
                                 </div>
                             </div>
                             <div class="card-body">
-
                                 <div class="float-right">
-                                    <form method="GET", action="{{ route('order.index') }}">
+                                    <form method="GET" action="{{ route('order.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
@@ -54,52 +52,41 @@
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-
                                             <th>No Pesanan</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>No Hp</th>
-                                            <th>Tanggal</th>
+                                            <th>Tanggal Pengerjaan</th>
                                             <th>Action</th>
                                         </tr>
                                         @foreach ($orders as $order)
                                             <tr>
+                                                <td>{{ $order->id }}</td>
+                                                <td>{{ $order->nama }}</td>
+                                                <td>{{ $order->alamat }}</td>
+                                                <td>{{ $order->no_hp }}</td>
+                                                <td>{{ $order->tanggal }}</td>
                                                 <td>
-                                                    {{ $order->id }}
-                                                </td>
-                                                <td>
-                                                    {{ $order->nama }}
-                                                </td>
-                                                <td>
-                                                    {{ $order->alamat }}
-                                                </td>
-                                                <td>
-                                                    {{ $order->no_hp }}
-                                                </td>
-                                                <td>
-                                                    {{ $order->tanggal }}
-                                                </td>
-                                                <td>
+                                                    
+                                                    @role('admin|superadmin')
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href='{{ route('order.edit', $order->id) }}'
+                                                                class="btn btn-sm btn-info btn-icon">
+                                                                <i class="fas fa-edit"></i>
+                                                                Edit
+                                                            </a>
 
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('order.edit', $order->id) }}'
-                                                            class="btn btn-sm btn-info btn-icon">
-                                                            <i class="fas fa-edit"></i>
-                                                            Edit
-                                                        </a>
-
-                                                        <form action="{{ route('order.destroy', $order->id) }}" method="POST"
-                                                            class="ml-2">
-                                                            <input type="hidden" name="_method" value="DELETE" />
-                                                            <input type="hidden" name="_token"
-                                                                value="{{ csrf_token() }}" />
-                                                            <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                <i class="fas fa-times"></i> Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
+                                                            <form action="{{ route('order.destroy', $order->id) }}" method="POST"
+                                                                class="ml-2">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-sm btn-danger btn-icon confirm-delete">
+                                                                    <i class="fas fa-times"></i> Delete
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        @endrole
+                                                    
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -116,6 +103,7 @@
         </section>
     </div>
 @endsection
+
 @push('scripts')
     <!-- JS Libraies -->
     <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>

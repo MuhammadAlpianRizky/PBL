@@ -22,11 +22,10 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:80',
-            'email' => 'required|email',
-            'handphone' => 'string',
-            'address' => 'string',
-            'roles' => 'string',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $this->user->id,
+            'handphone' => 'nullable|string|max:20',
+            'roles' => 'required|string|in:user,admin,superadmin',
         ];
     }
 }

@@ -19,15 +19,15 @@ class StoreUserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
-        return [
-            'name' => 'required|string|max:80',
-            'email' => 'required|email|unique:users',
-            'password' => 'required',
-            'handphone' => 'string',
-            'address' => 'string',
-            'roles' => 'string',
-        ];
-    }
+    // StoreUserRequest.php
+public function rules()
+{
+    return [
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:3',
+        'handphone' => 'required|string|max:15',
+        'roles' => 'required|string|in:user,admin,superadmin',
+    ];
+}
 }

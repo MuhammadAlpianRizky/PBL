@@ -43,6 +43,13 @@
 
 <body>
     <div id="app">
+        <style>
+            body{
+                background-color: rgba(77, 215, 74, 0.327);
+                
+                
+            }
+            </style>
         <div class="main-wrapper">
             <!-- Header -->
             @include('components.header')
