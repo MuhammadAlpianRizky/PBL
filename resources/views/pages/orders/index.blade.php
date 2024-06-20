@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('title', 'Users')
+<style>
+    .colorpesanan{
+        color:black;
+        font-weight: 900;
+    }
+</style>
 
 @push('style')
     <!-- CSS Libraries -->
@@ -33,6 +39,7 @@
                                 <h4>Silahkan Pesan Service</h4>
                                 <div class="section-header-button">
                                     <a href="{{ route('order.create') }}" class="btn btn-primary">Pesanan Baru</a>
+                                    <span class="colorpesanan">Tidak melayani pesanan h-1</span>
                                 </div>
                             </div>
                             <div class="card-body">

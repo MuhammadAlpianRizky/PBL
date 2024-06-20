@@ -47,7 +47,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Services</h1>
+                <h1>Pasang AC</h1>
             </div>
             <div class="services-section">
                 <div class="service-card">
@@ -108,7 +108,7 @@
                 <div class="service-card2">
                     <img src="{{ asset('img/luas.png') }}" alt="Service Icon">
                     <h2>Jangkauan Luas</h2>
-                    <p>Melayani wilayah Banjarmasin dan sekitarnya.</p>
+                    <p>Melayani wilayah Jogja Kota, Sleman, Bantul, Kulon Progo dan daerah sekitarnya.</p>
                 </div>
             </div>
         </section>

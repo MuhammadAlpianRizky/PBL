@@ -28,6 +28,18 @@ Route::resource('mahasiswa',MahasiswaController::class);
 Route::get('/contact',function(){
     return view('pages.contact.contact',['type_menu'=>'']);
 })->name('kontak');
+Route::get('/cuci-ac',function(){
+    return view('pages.layanankami.cuci-ac',['type_menu'=>'']);
+})->name('cuci');
+Route::get('/pasang-ac',function(){
+    return view('pages.layanankami.pasang-ac',['type_menu'=>'']);
+})->name('pasang');
+Route::get('/service-ac',function(){
+    return view('pages.layanankami.service-ac',['type_menu'=>'']);
+})->name('service');
+Route::get('/tambah-freon',function(){
+    return view('pages.layanankami.tambah-freon',['type_menu'=>'']);
+})->name('freon');
 
 Route::resource('order', OrderController::class);
 Route::resource('auth',AuthController::class);
