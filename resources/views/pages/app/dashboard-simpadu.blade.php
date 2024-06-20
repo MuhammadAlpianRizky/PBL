@@ -22,6 +22,18 @@
         background-size: cover; */
         padding: 50px 0;
     }
+    @media (max-width: 1024px) {
+    .services-section2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query untuk mobile */
+@media (max-width: 700px) {
+    .services-section2 {
+        grid-template-columns: 1fr;
+    }
+}
     <style>
   .main-content {
     display: flex;
@@ -33,7 +45,76 @@
     display: flex;
     flex-direction: column;
   }
-    
+
+
+
+        /* .service-card3 {
+            background-color: rgba(247, 247, 247, 0.886); 
+            background-image: linear-gradient(to bottom right, #e8e2de, #26a86e);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 500px;
+            margin: 20px;
+            border: none;
+        } */
+
+        .service-card3 img {
+            max-width: 100px;
+            
+        }
+
+.service-card3 h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold; /*Mengatur tebal*/
+    text-shadow: 2px 2px 4px rgba(42, 42, 42, 0.5); 
+    background-image: linear-gradient(45deg, #0b70e2,#ff0000); /* Gradient CSS */
+        -webkit-background-clip: text; /* Untuk WebKit (Safari, Chrome) */
+        background-clip: text; /* Untuk browser modern lainnya */
+        color: transparent;
+}
+
+.service-card3 h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    background-image: linear-gradient(45deg,#0b70e2, #ff0000); /* Gradient CSS */
+        -webkit-background-clip: text; /* Untuk WebKit (Safari, Chrome) */
+        background-clip: text; /* Untuk browser modern lainnya */
+        color: transparent;
+}
+
+.service-card3 h4 {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+        .whatsapp-button {
+            display: inline-flex;
+            background-color: #25D366; /* WhatsApp green */
+            color: #fff;
+            padding: 15px ;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease to ease-out;
+            align-items: center;
+            
+            
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-10px);
+            background-color: #1ebf5b;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            color: #000;
+        }
+        .whatsapp-button img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 1px; /* Space between image and text */
+}
 </style>
 
 @section('main')
@@ -56,7 +137,7 @@
                     <p>Siap berikan layanan terbaik untuk service AC Anda mulai dari Cuci AC, cek pressure freon, isi freon AC, hingga cek kondisi module dan parts. Siap perbaiki kerusakan AC ringan maupun berat sampai tuntas.</p>
                 </div>
                 <div class="service-card">
-                    <img src="img/bongkar-pasang.png" alt="Installation Icon" class="mobile-image">
+                    <img src="img/bongkar.png" alt="Installation Icon" class="mobile-image">
                     <h2>BONGKAR PASANG AC</h2>
                     <p>Cari jasa pasang AC baru atau perlu bongkar AC untuk dipindahkan ke tempat lain? Kami  siap bantu bongkar pasang AC termasuk mobilisasi AC ke lokasi baru. Dijamin Terpercaya.</p>
                 </div>
@@ -109,6 +190,22 @@
                     <img src="{{ asset('img/luas.png') }}" alt="Service Icon">
                     <h2>Jangkauan Luas</h2>
                     <p>Melayani wilayah Banjarmasin dan sekitarnya.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="main-content">
+        <section class="section">
+            <div class="services-section3">
+                <div class="service-card3">
+                    <h2>HUBUNGI SEGERA</h2>
+                    <h3>UNTUK ANDA YANG MENGINGINKAN PELAYANAN JASA SERVICE TERBAIK KAMI</h3>
+                    <h4>Kami selalu menawarkan jasa service dan sebagainya dengan harga terjangkau, profesional, dan bergaransi.</h4>
+                    <a href="https://wa.me/yourphonenumber" class="whatsapp-button">
+                        <img src="{{ asset('img/phone.png') }}" alt="Service Icon">
+                        ORDER SERVICE AC
+                    
+                    </a>
                 </div>
             </div>
         </section>

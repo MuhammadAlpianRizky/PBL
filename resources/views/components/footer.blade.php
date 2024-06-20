@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <style>.main-footer {
-        background-color: #000;
+        background-color: #262926;
         color: #fff;
         padding: 20px 0;
     }

@@ -63,6 +63,14 @@
   outline: none;
 }
 
+.services-section3 {
+  background-color: #000000;
+  background-image: linear-gradient(to bottom right, #9effb8, #095469); /* Gradient background */
+  padding: 50px 20px;
+  text-align: center;
+  color: #000000; 
+  }
+
 .services-section {
   display: flex;
   justify-content: space-around;
@@ -77,6 +85,8 @@
   width: calc(300px - 40px); /* Adjust width accordingly */
   box-sizing: border-box;
   text-align: center;
+  background-image: linear-gradient(to bottom right, #9effb8, #095469);
+  color: #000000;
 }
 .service-card h2 {
   font-size: 1.5em;
@@ -96,6 +106,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  /* width: calc(300px - 40px); */
 }
 .service-card2 h2 {
   font-size: 1.5em;
@@ -116,7 +127,7 @@
   }
 .section-header2 h1 {
       font-size: 2.5em;
-      color: #000000;
+      color: #ffffff;
       margin-bottom: 0;
   }
 
