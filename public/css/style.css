@@ -74,7 +74,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 10px;
-  width: calc(25% - 40px); /* Adjust width accordingly */
+  width: calc(300px - 40px); /* Adjust width accordingly */
   box-sizing: border-box;
   text-align: center;
 }
@@ -109,6 +109,7 @@
   max-width: 50px;
   margin-bottom: 15px;
 }
+
 .section-header2 {
       text-align: center;
       margin-bottom: 20px;
@@ -3559,7 +3560,7 @@ body.layout-3 .main-footer {
 }
 
 .main-content {
-  padding-left: 280px;
+  padding-left: 30px;
   padding-right: 30px;
   padding-top: 80px;
   width: 100%;

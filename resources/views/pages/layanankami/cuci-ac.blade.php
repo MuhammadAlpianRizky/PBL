@@ -47,32 +47,18 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Services</h1>
+                <h1>Cuci Ac</h1>
             </div>
-            <div class="services-section">
+            
+        </section>
+        <div class="services-section">
                 <div class="service-card">
                     <img src="img/service.png" alt="Service Icon" class="mobile-image">
                     <h2>SERVICE / PERBAIKAN AC</h2>
                     <p>Siap berikan layanan terbaik untuk service AC Anda mulai dari Cuci AC, cek pressure freon, isi freon AC, hingga cek kondisi module dan parts. Siap perbaiki kerusakan AC ringan maupun berat sampai tuntas.</p>
                 </div>
-                <div class="service-card">
-                    <img src="img/bongkar-pasang.png" alt="Installation Icon" class="mobile-image">
-                    <h2>BONGKAR PASANG AC</h2>
-                    <p>Cari jasa pasang AC baru atau perlu bongkar AC untuk dipindahkan ke tempat lain? Kami  siap bantu bongkar pasang AC termasuk mobilisasi AC ke lokasi baru. Dijamin Terpercaya.</p>
-                </div>
-                <div class="service-card">
-                    <img src="img/sales.png" alt="Sales Icon" class="mobile-image">
-                    <h2>PENJUALAN AC BEKAS</h2>
-                    <p>Anda membutuhkan AC bekas untuk rumah atau kantor? Di web kami melayani penjualan AC bekas harga terjangkau, berkualitas dan bergaransi (by request).</p>
-                </div>
-                <div class="service-card">
-                    <img src="img/kulkas.png" alt="Fridge Icon" class="mobile-image">
-                    <h2>SERVICE KULKAS</h2>
-                    <p>Solusi Tepat Bagi Anda Yang Mengalami Masalah Dengan Lemari Es 1 Pintu, 2 Pintu Dan Mesin Refrigerator Lainnya Seperti Chiller, Freezer Dan Showcase Dari Berbagai Merk Dan Type.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+                
+            
 </body>
     <div class="main-content">
         <section class="section">
@@ -108,7 +94,7 @@
                 <div class="service-card2">
                     <img src="{{ asset('img/luas.png') }}" alt="Service Icon">
                     <h2>Jangkauan Luas</h2>
-                    <p>Melayani wilayah Banjarmasin dan sekitarnya.</p>
+                    <p>Melayani wilayah Jogja Kota, Sleman, Bantul, Kulon Progo dan daerah sekitarnya.</p>
                 </div>
             </div>
         </section>
