@@ -37,10 +37,14 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Silahkan Pesan Service</h4>
+                                @guest
+                                    
+                                
                                 <div class="section-header-button">
                                     <a href="{{ route('order.create') }}" class="btn btn-primary">Pesanan Baru</a>
                                     <span class="colorpesanan">Tidak melayani pesanan h-1</span>
                                 </div>
+                                @endguest
                             </div>
                             <div class="card-body">
                                 <div class="float-right">
@@ -64,37 +68,62 @@
                                             <th>Alamat</th>
                                             <th>No Hp</th>
                                             <th>Tanggal Pengerjaan</th>
-                                            <th>Action</th>
+                                            <th>Status</th>
                                         </tr>
                                         @foreach ($orders as $order)
                                             <tr>
                                                 <td>{{ $order->id }}</td>
                                                 <td>{{ $order->nama }}</td>
                                                 <td>{{ $order->alamat }}</td>
+                                                @role('admin|user')
                                                 <td>{{ $order->no_hp }}</td>
+                                                @endrole
+                                                @guest
+                                                <td>{{ substr($order->no_hp, 0, 3) . str_repeat('*', strlen($order->no_hp) - 6) . substr($order->no_hp, -3) }}</td>
+                                                @endguest
                                                 <td>{{ $order->tanggal }}</td>
                                                 <td>
+                                                @guest
+                                                @if ($order->status == 'pending')
+                                                <button type="button" class="btn btn-sm btn-warning btn-icon"disabled>Pending</button>
+                                                @elseif ($order->status == 'assign')
+                                                <button type="button" class="btn btn-sm btn-info btn-icon"disabled>Progress</button>
+                                                @elseif ($order->status == 'selesai')
+                                                <button type="button" class="btn btn-sm btn-success btn-icon"disabled>Selesai</button>
+                                                @endif
                                                     
-                                                    @role('admin|superadmin')
-                                                        <div class="d-flex justify-content-center">
-                                                            <a href='{{ route('order.edit', $order->id) }}'
-                                                                class="btn btn-sm btn-info btn-icon">
-                                                                <i class="fas fa-edit"></i>
-                                                                Edit
-                                                            </a>
-
-                                                            <form action="{{ route('order.destroy', $order->id) }}" method="POST"
-                                                                class="ml-2">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                    <i class="fas fa-times"></i> Delete
-                                                                </button>
-                                                            </form>
-                                                        </div>
+                                                @endguest
+                                                    @role('user')
+                                                        @if ($order->status == 'assign')
+                                                            <button type="button" class="btn btn-sm btn-warning btn-icon"disabled>Progress</button>
+                                                            @elseif ($order->status == 'selesai')
+                                                            <button type="button" class="btn btn-sm btn-success btn-icon"disabled>Selesai</button>
+                                                            @else
+                                                        <form action="{{ route('order.ambil', $order->id) }}" method="POST">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-sm btn-primary">
+                                                                <i class="fas fa-hand-paper"></i> Ambil Pesanan
+                                                            </button>
+                                                        </form>
+                                                        @endif
+                                                    @else
+                                                        @role('admin|superadmin')
+                                                            <div class="d-flex justify-content-center">
+                                                                <a href='{{ route('order.edit', $order->id) }}' class="btn btn-sm btn-info btn-icon">
+                                                                    <i class="fas fa-edit"></i> Edit
+                                                                </a>
+                                                
+                                                                <form action="{{ route('order.destroy', $order->id) }}" method="POST" class="ml-2">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button class="btn btn-sm btn-danger btn-icon confirm-delete">
+                                                                        <i class="fas fa-times"></i> Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                                         @endrole
-                                                    
-                                                </td>
+                                                    @endrole
+                                                </td>                                                
                                             </tr>
                                         @endforeach
                                     </table>

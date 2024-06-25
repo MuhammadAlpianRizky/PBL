@@ -49,7 +49,7 @@
                         <p>
                             Pasang AC Bisa Dilakukan Baik Untuk AC Baru Beli Maupun AC Bekas Atau AC Copotan Atau AC Pindahan Dari Suatu Ruangan Ke Ruangan Yang Lain. 
                             AC Yang Telah Dipasang Pada Suatu Ruangan Memang Bisa Dibongkar Lalu Dipasang Di Tempat Yang Lain. 
-                            Namun Pengerjaannya Harus Dengan Penuh Kehati – Hatian Agar Barang Elektronik Tersebut Tidak Rusak Maupun Menimbulkan Bahaya. 
+                            Namun Pengerjaannya Harus Dengan Penuh Kehati - Hatian Agar Barang Elektronik Tersebut Tidak Rusak Maupun Menimbulkan Bahaya. 
                             Mengingat Komponen AC Yang Beragam Yang Cukup Rumit Penanganannya Dan Akan Timbul Kesulitan Jika Tidak Dilakukan Oleh Ahlinya Yang Berpengalaman.
                         </p>
                     </div>
@@ -197,7 +197,7 @@
                     <h2>HUBUNGI SEGERA</h2>
                     <h3>UNTUK ANDA YANG MENGINGINKAN PELAYANAN JASA SERVICE TERBAIK KAMI</h3>
                     <h4>Kami selalu menawarkan jasa service dan sebagainya dengan harga terjangkau, profesional, dan bergaransi.</h4>
-                    <a href="https://wa.me/081905033770" class="whatsapp-button">
+                    <a href="https://wa.me/+6281905033770" class="whatsapp-button">
                         <img src="{{ asset('img/phone.png') }}" alt="Service Icon">
                         ORDER SERVICE AC
                     

@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\TechnicianController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,6 +50,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', function () {
         return view('pages.app.dashboard-simpadu', ['type_menu' => '']);
     })->name('home');
+    Route::middleware('role:user')->resource('technician', TechnicianController::class);
+    Route::put('order/{id}/selesai', [OrderController::class, 'updateStatusToSelesai'])->name('order.selesai');
+    Route::post('order/{order}/ambil', [OrderController::class, 'ambil'])->name('order.ambil');
     Route::middleware('role:superadmin|admin')->resource('user', UserController::class);
     Route::middleware('role:superadmin|admin')->resource('subject', SubjectController::class);
     Route::middleware('role:superadmin|admin')->resource('schedule', ScheduleController::class);

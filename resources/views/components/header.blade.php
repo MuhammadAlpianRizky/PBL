@@ -117,11 +117,16 @@
                     <a class="dropdown-item" href="{{ route('freon') }}">Tambah Freon</a>
                 </div>
             </li>
+            @role('user')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('technician.index') }}"><i class="fas fa-fire"></i>Teknisi</a>
+            </li>
+            @endrole
             @role('admin|superadmin')
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-fire"></i> User</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('schedule.index') }}"><i class="fas fa-fire"></i> Schedule</a>
             </li> --}}
             @endrole
@@ -137,9 +142,7 @@
                 <a href="#"
                 data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                    <img alt="image"
-                        src="{{ asset('img/avatar/avatar-1.png') }}"
-                        class="rounded-circle mr-1">
+                <i class="fas fa-sign-out-alt rounded-circle mr-1"></i>
                     @guest
                     <div class="d-sm-none d-lg-inline-block">Customer</div>
                     @else
