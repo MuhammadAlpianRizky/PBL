@@ -9,7 +9,7 @@
 }
 
 .navbar-nav .dropdown-menu {
-    background-color: #343a40; /* Match the background color of the navbar */
+    background-color: #1b1b4f; /* Match the background color of the navbar */
     border: none;
 }
 
@@ -79,11 +79,11 @@
     }
     .sidebar.active {
         display: block; /* Menampilkan sidebar yang aktif pada layar kecil */
-    }
+    } 
 }
 
 .sidebar-toggle:hover {
-    background-color: #2a7dd1;
+    background-color: #28a745;
     color: #fff;
 }
 
@@ -91,12 +91,189 @@
     width: 250px;
 }
 
+.navbar {
+    background-color: #474683;
+}
+.navbar-bg {
+    background-color: #474683;
+}
+
+ /* Service card styles */
+ .service-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: calc(300px - 40px);
+    box-sizing: border-box;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #7473ae, #08041a);
+    color: #fff;
+    opacity: 0.8; /* Transparansi 80% */
+}
+    
+.service-card5 {
+  background-color: #fffcfc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.custom-title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #474683;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.section-header2 h1 {
+  font-size: 2.5em;
+  color: #474683;
+  margin-bottom: 0;
+}
+
+.services-section2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #ffffff;
+  gap: 20px;
+  padding: 50px 0;
+}
+
+.service-card2 {
+  background-color: rgba(71, 70, 131, 0.75);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.service-card3 h2 {
+  font-size: 2.5em; /* Ukuran font yang besar */
+  margin-bottom: 10px; /* Jarak bawah */
+  font-weight: bold; /* Teks tebal */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33); /* Bayangan teks hitam dengan transparansi */
+  background-image: linear-gradient(30deg, #fff, #ff5400); /* Gradien warna untuk teks */
+  color: transparent; /* Teks transparan */
+}
+
+
+.service-card3 h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: bold; /* Teks tebal */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33); /* Bayangan teks hitam dengan transparansi */
+  background-image: linear-gradient(30deg, #fff, #ff5400); /* Gradien warna untuk teks */
+  color: transparent; /* Teks transparan */
+}
+
+.service-card3 h4 {
+  font-size: 1em; /* Ukuran font */
+  margin-bottom: 20px; /* Jarak bawah */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan teks hitam dengan transparansi */
+  color: #fff;
+}
+
+.services-section3 {
+  background-color: #000000;
+  background-image: linear-gradient(to bottom right, #7473ae, #08041a);
+  padding: 50px 20px;
+  text-align: center;
+  color: #000000;
+}
+
+.section-header2 h1 {
+  font-size: 2.5em;
+  color: #474683;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  background-color: #db7527;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transition: background-color 0.3s ease to ease-out;
+  align-items: center;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-10px);
+  background-color: #db7527;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  color: #000;
+}
+
+.section .section-header h1 {
+  margin-bottom: 0;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: 3px;
+  color: #474683;
+}
+
+.service-card-service-ac h2 {
+  color: #474683;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card .card-header h4 {
+  font-size: 16px;
+  line-height: 28px;
+  color: #474683;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+
+.btn-primary {
+  box-shadow: 0 2px 6px #acb5f6;
+  background-color: #474683;
+  border-color: #474683;
+}
+
+.btn-primary:hover {
+    background-color: #1b1b4f !important;
+}
+
+.colorpesanan {
+  color: #1b1b4f;
+  font-weight: 900;
+}
+
+.btn-info {
+  box-shadow: 0 2px 6px #1b1b4f7a;
+  background-color: #474683;
+  border-color: #474683;
+  color: #fff;
+}
+
+.btn-info:hover {
+    background-color: #1b1b4f !important;
+}
+
+.btn.btn-sm {
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
 
 </style>
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
     <a class="navbar-brand" href="{{ route('home1') }}">
-        <img class="logo"  src="img/logo2.png" alt="">
+        <img class="logo" src="img/Untitled-1.png" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -104,11 +281,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('home1') }}"><i class="fas fa-fire"></i> Home</a>
+                <a class="nav-link" href="{{ route('home1') }}"><i class="fas fa-home"></i> Beranda </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="layananKamiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-fire"></i> Layanan Kami
+                    <i class="fas fa-cog"></i> Layanan Kami
                 </a>
                 <div class="dropdown-menu" aria-labelledby="layananKamiDropdown">
                     <a class="dropdown-item" href="{{ route('service') }}">Service AC</a>
@@ -126,10 +303,10 @@
             </li> --}}
             @endrole
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('order.index') }}"><i class="fas fa-fire"></i> Pesan</a>
+                <a class="nav-link" href="{{ route('order.index') }}"><i class="fas fa-tools"></i> Pesan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('kontak') }}"><i class="fas fa-fire"></i> Kontak</a>
+                <a class="nav-link" href="{{ route('kontak') }}"><i class="fas fa-address-book"></i> Kontak</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -149,7 +326,7 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     @guest
                     <a href="{{ route('login') }}" class="dropdown-item has-icon">
-                        <i class="fas fa-bolt"></i> Login
+                        <i class="fas fa-sign-in-alt"></i> Login
                     </a>
                     @else
                     <a href="#" class="dropdown-item has-icon text-danger"

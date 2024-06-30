@@ -6,6 +6,12 @@
         color:black;
         font-weight: 900;
     }
+
+    .btn-primary{
+  box-shadow: 0 2px 6px #acb5f6;
+  background-color: #474683;
+  border-color: #6777ef;
+}
 </style>
 
 @push('style')
@@ -76,7 +82,7 @@
                                                 <td>
                                                     
                                                     @role('admin|superadmin')
-                                                        <div class="d-flex justify-content-center">
+                                                        <div class="d-flex justify-content">
                                                             <a href='{{ route('order.edit', $order->id) }}'
                                                                 class="btn btn-sm btn-info btn-icon">
                                                                 <i class="fas fa-edit"></i>

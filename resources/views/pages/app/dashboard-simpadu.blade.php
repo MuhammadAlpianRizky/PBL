@@ -47,14 +47,14 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Beranda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Services</h1>
+                <h1 style="color: #474683;">Beranda</h1>
             </div>
             <div class="services-section">
                 <div class="service-card">
