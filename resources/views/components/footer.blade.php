@@ -119,16 +119,16 @@
             <div class="contact-item">
                 <!-- Telepon -->
                 <span class="contact-icon"><i class="fas fa-phone"></i></span>
-                <a href="tel:+6285842619307">TELEPON</a>
-                <a href="#">0858-4261-9307</a>
+                <a href="tel:+6281905033770">TELEPON</a>
+                <a href="#">0819-0503-3770</a>
             </div>
             <div class="contact-item">
                 <!-- WhatsApp -->
                 <span class="contact-icon">
                     <img src="img/wa.png" alt="WhatsApp" style="width:24px; height:24px;">
                 </span>
-                <a href="https://wa.me/6285842619307">WHATSAPP</a>
-                <a href="#">0858-4261-9307</a>
+                <a href="https://wa.me/+6281905033770">WHATSAPP</a>
+                <a href="#">0819-0503-3770</a>
             </div>
         </div>
     </div>      

@@ -36,8 +36,18 @@ class UserSeeder extends Seeder
             'name' => 'Muhammad Alpian Rizky',
             'email' => 'c030322123@mahasiswa.poliban.ac.id',
             'email_verified_at' => now(),
-            'password' => Hash::make('987654321'),
-            'handphone'=>''
+            'password' => Hash::make('123'),
+            'handphone'=>'081905033770'
+            
+        ]);
+        $user ->assignRole('user');
+
+        $user = User::create([
+            'name' => 'Ibnu Ali Husain',
+            'email' => 'c030322120@mahasiswa.poliban.ac.id',
+            'email_verified_at' => now(),
+            'password' => Hash::make('123'),
+            'handphone'=>'081223456789'
             
         ]);
         $user ->assignRole('user');

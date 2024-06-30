@@ -6,12 +6,31 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Technician;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    $orders = Order::orderBy('created_at', 'desc')->paginate(2);
+        $query = Order::query();
+    
+        if ($request->has('name') && !empty($request->name)) {
+            $query->where('nama', 'like', '%' . $request->name . '%');
+        }
+    
+        if ($request->has('year') && !empty($request->year)) {
+            $query->whereYear('tanggal', $request->year);
+        }
+    
+        if ($request->has('month') && !empty($request->month)) {
+            $query->whereMonth('tanggal', $request->month);
+        }
+    
+        if ($request->has('day') && !empty($request->day)) {
+            $query->whereDay('tanggal', $request->day);
+        }
+    $orders = Order::orderBy('created_at', 'desc')->paginate(10);
     return view('pages.orders.index', ['orders' => $orders]);
     }
 
@@ -67,6 +86,37 @@ public function store(StoreOrderRequest $request)
         $order->update($validasiData);
     
         return redirect()->route('order.index')->with('success', 'Edit Pesanan Successfully');
+    }
+
+    public function ambil(Order $order)
+{
+    // Validasi bahwa pengguna adalah 'user' dan order belum diambil
+    if (Auth::check() && Auth::user()->hasRole('user') && $order->status !== 'assign') {
+        // Simpan data teknisi baru
+        $technician = new Technician();
+        $technician->user_id = Auth::user()->id; // Mendapatkan ID pengguna yang sedang login
+        $technician->order_id = $order->id;
+        $technician->save();
+
+        // Update status pesanan
+        $order->status = 'assign';
+        $order->save();
+
+        return redirect()->back()->with('success', 'Pesanan telah diambil.');
+    } else {
+        return redirect()->back()->with('error', 'Tidak dapat mengambil pesanan ini.');
+    }
+}
+public function updateStatusToSelesai($id)
+    {
+        $order = Order::findOrFail($id);
+        
+        // Ubah status order menjadi 'selesai'
+        $order->status = 'selesai';
+        $order->save();
+
+        // Redirect atau return response sesuai kebutuhan
+        return redirect()->back()->with('success', 'Pelayanan Service AC Selesai');
     }
 
 //     /**
