@@ -11,8 +11,25 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $query = Order::query();
+    
+        if ($request->has('name') && !empty($request->name)) {
+            $query->where('nama', 'like', '%' . $request->name . '%');
+        }
+    
+        if ($request->has('year') && !empty($request->year)) {
+            $query->whereYear('tanggal', $request->year);
+        }
+    
+        if ($request->has('month') && !empty($request->month)) {
+            $query->whereMonth('tanggal', $request->month);
+        }
+    
+        if ($request->has('day') && !empty($request->day)) {
+            $query->whereDay('tanggal', $request->day);
+        }
     $orders = Order::orderBy('created_at', 'desc')->paginate(10);
     return view('pages.orders.index', ['orders' => $orders]);
     }

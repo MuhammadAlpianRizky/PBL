@@ -13,11 +13,11 @@
             <div class="section-header">
                 <h1>All Users</h1>
 
-                <div class="section-header-breadcrumb">
+                {{-- <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Users</a></div>
                     <div class="breadcrumb-item">All Users</div>
-                </div>
+                </div> --}}
             </div>
             <div class="section-body">
 
@@ -86,9 +86,9 @@
                                                     @if(auth()->user()->hasRole('superadmin'))
                                                         @if($user->id !== auth()->user()->id) <!-- Menyembunyikan tombol delete jika superadmin mencoba menghapus dirinya sendiri -->
                                                             <div class="d-flex justify-content-center">
-                                                                <a href='{{ route('user.edit', $user->id) }}' class="btn btn-sm btn-info btn-icon">
+                                                                {{-- <a href='{{ route('user.edit', $user->id) }}' class="btn btn-sm btn-info btn-icon">
                                                                     <i class="fas fa-edit"></i> Edit
-                                                                </a>
+                                                                </a> --}}
                                                                 @if ($user->hasRole('admin') || $user->hasRole('user'))
                                                                     <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="ml-2">
                                                                         @method('DELETE')
@@ -100,26 +100,29 @@
                                                                 @endif
                                                             </div>
                                                         @endif
-                                                    @elseif(auth()->user()->hasRole('admin'))
+                                                        @endif
+                                                    {{-- @elseif(auth()->user()->hasRole('admin')) --}}
                                                         @if($user->hasRole('user')) <!-- Hanya admin bisa mengedit bagian user -->
                                                             <div class="d-flex justify-content-center">
-                                                                <a href='{{ route('user.edit', $user->id) }}' class="btn btn-sm btn-info btn-icon">
+                                                                {{-- <a href='{{ route('user.edit', $user->id) }}' class="btn btn-sm btn-info btn-icon">
                                                                     <i class="fas fa-edit"></i> Edit
                                                                 </a>
-                                                                <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="ml-2">
-                                                                    @method('DELETE')
-                                                                    @csrf
-                                                                    <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                        <i class="fas fa-times"></i> Delete
-                                                                    </button>
-                                                                </form>
-                                                            </div>
+                                                                <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="ml-2"> --}}
+                                                                    <div class="d-flex justify-content-center">
+                                                        <button type="button" class="btn btn-sm btn-danger btn-icon" data-toggle="modal" data-target="#deleteConfirmationModal" data-form-id="delete-form-{{ $user->id }}">
+                                                            <i class="fas fa-times"></i> Delete
+                                                        </button>
+                                                        <form id="delete-form-{{ $user->id }}" action="{{ route('user.destroy', $user->id) }}" method="POST" class="d-none">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
                                                         @endif
-                                                    @endif
+                                                    </div>
                                                 </td>
+                                            </tr>
                                         @endforeach
-                                    </table>
-                                </div>
+                                    </tbody>
+                                </table>
                                 <div class="float-right">
                                     {{ $users->withQueryString()->links() }}
                                 </div>
@@ -130,10 +133,48 @@
             </div>
         </section>
     </div>
+    <!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Apakah User Ini Mau Dihapus?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @push('scripts')
     <!-- JS Libraies -->
     <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('js/page/features-posts.js') }}"></script>
+
+    <script>
+        // Attach event listener to all delete buttons to store the form ID in the modal
+        $('#deleteConfirmationModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var formId = button.data('form-id'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.data('form-id', formId); // Store the form ID in the modal
+        });
+    
+        // Attach event listener to the modal confirmation button
+        document.getElementById('confirmDeleteButton').addEventListener('click', function() {
+            // Get the form ID from the data attribute of the modal
+            var formId = $('#deleteConfirmationModal').data('form-id');
+            // Submit the form
+            document.getElementById(formId).submit();
+        });
+    </script>
 @endpush
