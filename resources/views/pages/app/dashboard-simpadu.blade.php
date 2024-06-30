@@ -14,15 +14,8 @@
 @endpush
 
 <style>
-    .services-section2 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        /* background: url('{{ asset('img/image.png') }}') no-repeat center center;
-        background-size: cover; */
-        padding: 50px 0;
-    }
-    <style>
+  
+    /* <style>
   .main-content {
     display: flex;
     justify-content: center;
@@ -32,22 +25,36 @@
   .section {
     display: flex;
     flex-direction: column;
-  }
-    
+  } */
+
+
+
+        /* .service-card3 {
+            background-color: rgba(247, 247, 247, 0.886); 
+            background-image: linear-gradient(to bottom right, #e8e2de, #26a86e);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 500px;
+            margin: 20px;
+            border: none;
+        } */
+
 </style>
 
 @section('main')
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Beranda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Services</h1>
+                <h1 style="color: #474683;">Beranda</h1>
             </div>
             <div class="services-section">
                 <div class="service-card">
@@ -56,7 +63,7 @@
                     <p>Siap berikan layanan terbaik untuk service AC Anda mulai dari Cuci AC, cek pressure freon, isi freon AC, hingga cek kondisi module dan parts. Siap perbaiki kerusakan AC ringan maupun berat sampai tuntas.</p>
                 </div>
                 <div class="service-card">
-                    <img src="img/bongkar-pasang.png" alt="Installation Icon" class="mobile-image">
+                    <img src="img/bongkar.png" alt="Installation Icon" class="mobile-image">
                     <h2>BONGKAR PASANG AC</h2>
                     <p>Cari jasa pasang AC baru atau perlu bongkar AC untuk dipindahkan ke tempat lain? Kami  siap bantu bongkar pasang AC termasuk mobilisasi AC ke lokasi baru. Dijamin Terpercaya.</p>
                 </div>
@@ -66,14 +73,30 @@
                     <p>Anda membutuhkan AC bekas untuk rumah atau kantor? Di web kami melayani penjualan AC bekas harga terjangkau, berkualitas dan bergaransi (by request).</p>
                 </div>
                 <div class="service-card">
-                    <img src="img/kulkas.png" alt="Fridge Icon" class="mobile-image">
-                    <h2>SERVICE KULKAS</h2>
-                    <p>Solusi Tepat Bagi Anda Yang Mengalami Masalah Dengan Lemari Es 1 Pintu, 2 Pintu Dan Mesin Refrigerator Lainnya Seperti Chiller, Freezer Dan Showcase Dari Berbagai Merk Dan Type.</p>
+                    <img src="img/tambahfreon2.png" alt="Fridge Icon" class="mobile-image">
+                    <h2>TAMBAH FREON AC Banjarmasin</h2>
+                    <p>Rasakan kembali kesejukan ruangan dengan tambah freon dari kami. 
+                        AC Anda akan lebih dingin dan sejuk, hemat biaya listrik, dan menciptakan ruangan yang nyaman.</p>
                 </div>
             </div>
         </section>
     </div>
 </body>
+
+ <div class="main-content">
+    <div class="service-card5">
+        <section class="section">
+            <div class="section-header4">
+            <h1 class="custom-title">MENERIMA SERVICE AC SEMUA MERK</h1>
+            </div>
+            <div class="service-card5">
+                <img src="{{ asset('img/Logo-LG.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-Daikin.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-Panasonic.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-SHARP.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-Samsung.png') }}" alt="Brand Logo" >
+            </div>
+    </div>
     <div class="main-content">
         <section class="section">
             <div class="section-header2">
@@ -109,6 +132,22 @@
                     <img src="{{ asset('img/luas.png') }}" alt="Service Icon">
                     <h2>Jangkauan Luas</h2>
                     <p>Melayani wilayah Banjarmasin dan sekitarnya.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="main-content">
+        <section class="section">
+            <div class="services-section3">
+                <div class="service-card3">
+                    <h2>HUBUNGI SEGERA</h2>
+                    <h3>UNTUK ANDA YANG MENGINGINKAN PELAYANAN JASA SERVICE TERBAIK KAMI</h3>
+                    <h4>Kami selalu menawarkan jasa service dan sebagainya dengan harga terjangkau, profesional, dan bergaransi.</h4>
+                    <a href="https://wa.me/081905033770" class="whatsapp-button">
+                        <img src="{{ asset('img/phone.png') }}" alt="Service Icon">
+                        ORDER SERVICE AC
+                    
+                    </a>
                 </div>
             </div>
         </section>

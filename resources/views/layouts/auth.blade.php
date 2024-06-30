@@ -42,8 +42,9 @@
 <body>
 <style>
         body {
-            background-color: #87CEEB; /* Ubah warna background sesuai keinginan */
+            background-color: #474683ad; /* Ubah warna background sesuai keinginan */
     }
+
 </style>
     <div id="app">
         <section class="section">

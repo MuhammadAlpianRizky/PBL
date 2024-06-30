@@ -63,7 +63,7 @@
         </div>
 
         <div class="contact-card">
-            <img src="{{ asset('img/ig3.jpeg') }}" alt="WhatsApp Icon">
+            <img src="{{ asset('img/ig3.png') }}" alt="WhatsApp Icon">
             <h2>Instagram</h2>
             <p>Kami juga Punya Instagram</p>
             <a href="https://www.instagram.com/m.alpianrizky">Instagram</a>

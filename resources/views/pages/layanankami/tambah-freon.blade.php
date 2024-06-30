@@ -14,26 +14,8 @@
 @endpush
 
 <style>
-    .services-section2 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        /* background: url('{{ asset('img/image.png') }}') no-repeat center center;
-        background-size: cover; */
-        padding: 50px 0;
-    }
-    <style>
-  .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .section {
-    display: flex;
-    flex-direction: column;
-  }
-    
+
 </style>
 
 @section('main')
@@ -47,33 +29,69 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Freon</h1>
+                <h1>Tambah Freon AC</h1>
             </div>
             <div class="services-section">
-                <div class="service-card">
-                    <img src="img/service.png" alt="Service Icon" class="mobile-image">
-                    <h2>SERVICE / PERBAIKAN AC</h2>
-                    <p>Siap berikan layanan terbaik untuk service AC Anda mulai dari Cuci AC, cek pressure freon, isi freon AC, hingga cek kondisi module dan parts. Siap perbaiki kerusakan AC ringan maupun berat sampai tuntas.</p>
-                </div>
-                <div class="service-card">
-                    <img src="img/bongkar-pasang.png" alt="Installation Icon" class="mobile-image">
-                    <h2>BONGKAR PASANG AC</h2>
-                    <p>Cari jasa pasang AC baru atau perlu bongkar AC untuk dipindahkan ke tempat lain? Kami  siap bantu bongkar pasang AC termasuk mobilisasi AC ke lokasi baru. Dijamin Terpercaya.</p>
-                </div>
-                <div class="service-card">
-                    <img src="img/sales.png" alt="Sales Icon" class="mobile-image">
-                    <h2>PENJUALAN AC BEKAS</h2>
-                    <p>Anda membutuhkan AC bekas untuk rumah atau kantor? Di web kami melayani penjualan AC bekas harga terjangkau, berkualitas dan bergaransi (by request).</p>
-                </div>
-                <div class="service-card">
-                    <img src="img/kulkas.png" alt="Fridge Icon" class="mobile-image">
-                    <h2>SERVICE KULKAS</h2>
-                    <p>Solusi Tepat Bagi Anda Yang Mengalami Masalah Dengan Lemari Es 1 Pintu, 2 Pintu Dan Mesin Refrigerator Lainnya Seperti Chiller, Freezer Dan Showcase Dari Berbagai Merk Dan Type.</p>
-                </div>
-            </div>
+                <div class="service-card-service-ac">
+                    <img src="img/tambahfreon2.png" alt="Service Icon" class="mobile-image">
+                    <h2>Tambah Freon Ac Banjarimasin</h2>
+                    <div>
+                    <p><a href="#"> Service AC Banjarmasin</a> – Kami Jasa Isi / Tambah Freon AC Terbaik Profesional Berpengalaman Di Banjarmasin Dan Daerah Sekitarnya.
+                    </div>
+                    <div>
+                        <p>
+                            Freon Adalah Senyawa Yang Dipakai Sebagai Bahan Bakar Yang Memperlancar Sistem Kerja Air Conditioner. 
+                            Adanya Freon Berguna Untuk Membuat AC Menghasilkan Udara Yang Lebih Sejuk. Itu Artinya, AC Sangat Bergantung Pada Freon. 
+                            Jadi, Ketika Tidak Ada Freon Maka AC Yang Ada Di Rumahmu Tidak Akan Mengeluarkan Udara Yang Dingin. 
+                            Selain Itu, Freon Juga Berperan Sebagai Fluida Yang Selanjutnya Akan Menyerap Panas Maupun Kotor.
+                        </p>
+                    </div>
+                    <div>
+                    <P>
+                        Fungsi Freon Adalah Untuk Bahan Bakar AC Yang Selanjutnya Akan Menghasilkan Udara Sejuk Ke Ruangan. 
+                        Zat Ini Akan Berubah Bentuknya Dari Cair Ke Gas Dan Akan Keluar Ke Ruangan. 
+                        Jadi, Ruangan Yang Kamu Gunakan Saat Ini Terasa Sejuk Karena Adanya Freon.
+                    </P>
+                    <p>
+                        Ketika Pemasangan AC, Proses Pengisian Freon Harus Benar-Benar Diperhatikan. 
+                        Pengisian Zat Ini Harus Berada Dalam Pengawasan Serta Benar-Benar Sesuai Dengan Prosedur Pengisian Yang Berlaku. 
+                        Tujuannya Agar Tidak Sampai Mencampuri Udara.
+                    </p>
+                    <p>
+                        Pengisian Freon Memang Harus Dilakukan Dengan Sangat Hati-Hati. 
+                        Jangan Sampai Mengisinya Sembarangan Karena Kerugiannya Bis Sangat Fatal. 
+                        Itu Artinya, Pemasangan Freon Harus Benar-Benar Dilakukan Oleh Ahlinya. 
+                        Dengan Begitu, Proses Pemasangan Freon Akan Sesuai Dengan Prosedur Yang Berlaku.
+                    </p>
+                    <p>
+                        Percayakan Pada Ahlinya, Hubungi <a href="#">Akhmad Service AC</a> Untuk Layanan Jasa Isi / Tambah Freon AC.  
+                        Kami Jasa Isi / Tambah Freon AC Yang Memiliki Tenaga Ahli Yang Bekerja Dengan Secara Profesional Serta Cekatan Dan Berpengalaman.
+                    </p>
+                    <p>
+                        Kami Spesialis Jasa Isi / Tambah Freon AC Banjarmasin. 
+                        Menerima Layanan Jasa Isi / Tambah Freon AC Untuk Rumah, Apartemen, Kantor Ataupun Pabrik Anda. 
+                        Kami Bergaransi Dan Tanggung Jawab Penuh Atas Pekerjaan.
+                    </p>
+                    </div>
+                
+                
         </section>
     </div>
 </body>
+<div class="main-content">
+    <div class="service-card5">
+        <section class="section">
+            <div class="section-header4">
+            <h1 class="custom-title">MENERIMA SERVICE AC SEMUA MERK</h1>
+            </div>
+            <div class="service-card5">
+                <img src="{{ asset('img/Logo-LG.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-Daikin.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-Panasonic.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-SHARP.png') }}" alt="Brand Logo" >
+                <img src="{{ asset('img/Logo-Samsung.png') }}" alt="Brand Logo" >
+            </div>
+    </div>
     <div class="main-content">
         <section class="section">
             <div class="section-header2">
@@ -108,7 +126,23 @@
                 <div class="service-card2">
                     <img src="{{ asset('img/luas.png') }}" alt="Service Icon">
                     <h2>Jangkauan Luas</h2>
-                    <p>Melayani wilayah Jogja Kota, Sleman, Bantul, Kulon Progo dan daerah sekitarnya.</p>
+                    <p>Melayani wilayah Banjarmasin dan sekitarnya.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="main-content">
+        <section class="section">
+            <div class="services-section3">
+                <div class="service-card3">
+                    <h2>HUBUNGI SEGERA</h2>
+                    <h3>UNTUK ANDA YANG MENGINGINKAN PELAYANAN JASA SERVICE TERBAIK KAMI</h3>
+                    <h4>Kami selalu menawarkan jasa service dan sebagainya dengan harga terjangkau, profesional, dan bergaransi.</h4>
+                    <a href="https://wa.me/081905033770" class="whatsapp-button">
+                        <img src="{{ asset('img/phone.png') }}" alt="Service Icon">
+                        ORDER SERVICE AC
+                    
+                    </a>
                 </div>
             </div>
         </section>

@@ -63,6 +63,177 @@
   outline: none;
 }
 
+/* service-ac/cuci-ac/tambah-freon-pasang-ac */
+
+.cuci-ac-ol li{
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+.services-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  margin-right:100px; 
+}
+
+
+.service-card-service-ac {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    text-align: center;
+}
+
+.service-card-service-ac h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.service-card-service-ac p {
+  font-size: 16px;
+  color: #545151;
+  text-align: justify;
+  text-justify: inter-word;
+  font-weight: bold;
+}
+.service-card-service-ac img {
+max-width: 50px;
+margin-bottom:15px;
+}
+.ac2{
+    text-align: left;
+}
+.service-card-service-ac a{
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(24, 164, 199, 0.5);
+
+}
+
+.service-card-service-ac h3 {
+  color: #000000;
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+/* buat dashboard/landingpage */
+.services-section2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  /* background: url('{{ asset('img/image.png') }}') no-repeat center center;
+  background-size: cover; */
+  padding: 50px 0;
+}
+@media (max-width: 1024px) {
+.services-section2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+/* Media query untuk mobile */
+@media (max-width: 700px) {
+.services-section2 {
+  grid-template-columns: 1fr;
+}
+}
+
+.service-card3 img {
+  max-width: 100px;
+  
+}
+
+.service-card3 h2 {
+font-size: 2.5em;
+margin-bottom: 10px;
+font-weight: bold; /*Mengatur tebal*/
+text-shadow: 2px 2px 4px rgba(42, 42, 42, 0.5); 
+background-image: linear-gradient(45deg, #0b70e2,#ff0000); /* Gradient CSS */
+-webkit-background-clip: text; /* Untuk WebKit (Safari, Chrome) */
+background-clip: text; /* Untuk browser modern lainnya */
+color: transparent;
+}
+
+.service-card3 h3 {
+font-size: 2em;
+margin-bottom: 10px;
+background-image: linear-gradient(45deg,#0b70e2, #ff0000); /* Gradient CSS */
+-webkit-background-clip: text; /* Untuk WebKit (Safari, Chrome) */
+background-clip: text; /* Untuk browser modern lainnya */
+color: transparent;
+}
+
+.service-card3 h4 {
+font-size: 1em;
+margin-bottom: 20px;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  background-color: #25D366; /* WhatsApp green */
+  color: #fff;
+  padding: 15px ;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease to ease-out;
+  align-items: center;
+  
+  
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-10px);
+  background-color: #1ebf5b;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  color: #000;
+}
+.whatsapp-button img {
+width: 40px; /* Adjust size as needed */
+height: auto;
+margin-right: 1px; /* Space between image and text */
+}
+.section-header4{
+color: #000;
+}
+/* Bayangan tebal */
+.custom-title {
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+/* Ganti warna teks jika diperlukan */
+color: #000000;
+/* Ukuran font judul */
+font-size: 28px;
+/* Gaya huruf judul (misalnya: bold, italic) */
+font-weight: bold;
+/* Atur margin atau padding jika diperlukan */
+margin: 10px 0;
+}
+.service-card5 {
+background-color: #fffcfc;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+text-align: center;
+}
+.service-card5 img {
+width: 25%;
+height: auto;
+margin: 10px;
+}
+
+.services-section3 {
+  background-color: #000000;
+  background-image: linear-gradient(to bottom right, #9effb8, #095469); /* Gradient background */
+  padding: 50px 20px;
+  text-align: center;
+  color: #000000; 
+  }
+
 .services-section {
   display: flex;
   justify-content: space-around;
@@ -77,6 +248,8 @@
   width: calc(300px - 40px); /* Adjust width accordingly */
   box-sizing: border-box;
   text-align: center;
+  background-image: linear-gradient(to bottom right, #9effb8, #095469);
+  color: #000000;
 }
 .service-card h2 {
   font-size: 1.5em;
@@ -96,6 +269,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  /* width: calc(300px - 40px); */
 }
 .service-card2 h2 {
   font-size: 1.5em;
@@ -116,7 +290,7 @@
   }
 .section-header2 h1 {
       font-size: 2.5em;
-      color: #000000;
+      color: #ffffff;
       margin-bottom: 0;
   }
 
