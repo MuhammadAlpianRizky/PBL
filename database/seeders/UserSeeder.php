@@ -51,6 +51,17 @@ class UserSeeder extends Seeder
             
         ]);
         $user ->assignRole('user');
+
+        $user = User::create([
+            'name' => 'Ghefira Nurul A.I.R',
+            'email' => 'fira@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('123'),
+            'handphone'=>''
+            
+        ]);
+        $user ->assignRole('user');
+        
         
     
     }
