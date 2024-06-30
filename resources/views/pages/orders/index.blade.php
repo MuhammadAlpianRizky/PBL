@@ -144,7 +144,7 @@
                                                 </td>
                                                 <td>
                                                     @role('admin|superadmin')
-                                                    <div class="d-flex justify-content">
+                                                    
                                                             <a href='{{ route('order.edit', $order->id) }}'
                                                                 class="btn btn-sm btn-info btn-icon">
                                                                 <i class="fas fa-edit"></i>
