@@ -149,26 +149,22 @@
                                                     @endrole
                                                 </td>
                                                 <td>
-                                                       
                                                     @role('admin|superadmin')
-                                                        <div class="d-flex justify-content">
-                                                            <a href='{{ route('order.edit', $order->id) }}'
-                                                                class="btn btn-sm btn-info btn-icon">
-                                                                <i class="fas fa-edit"></i>
-                                                                Edit
-                                                            </a>
-
-                                                            <form action="{{ route('order.destroy', $order->id) }}" method="POST"
-                                                                class="ml-2">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                    <i class="fas fa-times"></i> Delete
-                                                                </button>
-                                                            </form>
-                                                        </div>
-                                                        @endrole
-                                                    
+                                                    <div class="d-flex justify-content-center">
+                                                        <a href='{{ route('order.edit', $order->id) }}' class="btn btn-sm btn-info btn-icon">
+                                                            <i class="fas fa-edit"></i> Edit
+                                                        </a>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center">
+                                                        <button type="button" class="btn btn-sm btn-danger btn-icon" data-toggle="modal" data-target="#deleteConfirmationModal" data-form-id="delete-form-{{ $order->id }}">
+                                                            <i class="fas fa-times"></i> Delete
+                                                        </button>
+                                                        <form id="delete-form-{{ $order->id }}" action="{{ route('order.destroy', $order->id) }}" method="POST" class="d-none">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
+                                                    </div>
+                                                    @endrole
                                                 </td>
                                             </tr>
                                         @endforeach
