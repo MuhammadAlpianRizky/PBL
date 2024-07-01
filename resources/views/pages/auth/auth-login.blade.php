@@ -38,9 +38,9 @@
                         <div class="float-right">
 
                             {{-- {{ route('password.request') }} --}}
-                            <a href="#" class="text-small">
+                            <!-- <a href="#" class="text-small">
                                 Forgot Password?
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <input id="password" type="password"
