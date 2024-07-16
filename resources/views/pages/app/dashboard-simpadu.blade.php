@@ -143,7 +143,7 @@
                     <h2>HUBUNGI SEGERA</h2>
                     <h3>UNTUK ANDA YANG MENGINGINKAN PELAYANAN JASA SERVICE TERBAIK KAMI</h3>
                     <h4>Kami selalu menawarkan jasa service dan sebagainya dengan harga terjangkau, profesional, dan bergaransi.</h4>
-                    <a href="https://wa.me/+6281905033770" class="whatsapp-button">
+                    <a href="https://wa.me/+6285257173686" class="whatsapp-button">
                         <img src="{{ asset('img/phone.png') }}" alt="Service Icon">
                         ORDER SERVICE AC
                     
