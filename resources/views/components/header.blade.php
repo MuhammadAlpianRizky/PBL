@@ -88,7 +88,7 @@
 }
 
 .logo{
-    width: 250px;
+    width: 130px;
 }
 
 .navbar {
@@ -296,12 +296,12 @@
             </li>
             @role('user')
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('technician.index') }}"><i class="fas fa-fire"></i>Teknisi</a>
+                <a class="nav-link" href="{{ route('technician.index') }}"><i class="fas fa-hard-hat"></i>Teknisi</a>
             </li>
             @endrole
             @role('admin|superadmin')
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-fire"></i> User</a>
+                <a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-user"></i> User</a>
             </li>
             {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('schedule.index') }}"><i class="fas fa-fire"></i> Schedule</a>
@@ -319,7 +319,7 @@
                 <a href="#"
                 data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <i class="fas fa-sign-out-alt rounded-circle mr-1"></i>
+                <i class="fas fa-user rounded-circle mr-1"></i>
                     @guest
                     <div class="d-sm-none d-lg-inline-block">Customer</div>
                     @else
