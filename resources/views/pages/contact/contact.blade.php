@@ -52,14 +52,14 @@
         <img src="{{ asset('img/telepone.jpg') }}" alt="Phone Icon">
         <h2>Telepon</h2>
         <p>Anda Butuh Layanan Kami Dengan Cepat?? Hubungi Kami Segera</p>
-        <p>0819-0503-3770</p>
+        <p>0852-5717-3686</p>
         </div>
 
         <div class="contact-card">
         <img src="{{ asset('img/wa2.png') }}" alt="WhatsApp Icon">
         <h2>WhatsApp</h2>
         <p>Punya Permasalahan Tentang Service AC?? Tanyakan Pada Kami Ahlinya</p>
-        <a href="https://wa.me/6281905033770">Contact Support</a>
+        <a href="https://wa.me/+6285257173686">Contact Support</a>
         </div>
 
         <div class="contact-card">
