@@ -16,8 +16,10 @@ class OrderController extends Controller
         $query = Order::query();
     
         if ($request->has('name') && !empty($request->name)) {
-            $query->where('nama', 'like', '%' . $request->name . '%');
+            $name = ucwords(strtolower($request->name));
+            $query->where('nama', 'like', '%' . $name . '%');
         }
+        
     
         if ($request->has('year') && !empty($request->year)) {
             $query->whereYear('tanggal', $request->year);
@@ -90,21 +92,36 @@ public function store(StoreOrderRequest $request)
 
     public function ambil(Order $order)
 {
-    // Validasi bahwa pengguna adalah 'user' dan order belum diambil
-    if (Auth::check() && Auth::user()->hasRole('user') && $order->status !== 'assign') {
-        // Simpan data teknisi baru
-        $technician = new Technician();
-        $technician->user_id = Auth::user()->id; // Mendapatkan ID pengguna yang sedang login
-        $technician->order_id = $order->id;
-        $technician->save();
+    // Check if the user is authenticated and has the 'user' role
+    if (Auth::check() && Auth::user()->hasRole('user')) {
+        // Check if the user already has an active order assigned
+        $existingOrder = Technician::where('user_id', Auth::user()->id)
+                                    ->whereHas('order', function($query) {
+                                        $query->where('status', 'assign');
+                                    })->first();
 
-        // Update status pesanan
-        $order->status = 'assign';
-        $order->save();
+        if ($existingOrder) {
+            return redirect()->back()->with('error', 'Orderan Hanya bisa diambil 1.');
+        }
 
-        return redirect()->back()->with('success', 'Pesanan telah diambil.');
+        // Ensure the order has not been taken yet
+        if ($order->status !== 'assign') {
+            // Save new technician data
+            $technician = new Technician();
+            $technician->user_id = Auth::user()->id; // Get the ID of the logged-in user
+            $technician->order_id = $order->id;
+            $technician->save();
+
+            // Update order status
+            $order->status = 'assign';
+            $order->save();
+
+            return redirect()->back()->with('success', 'Orderan Berhasil di ambil.');
+        } else {
+            return redirect()->back()->with('error', 'Order Sudah di Ambil.');
+        }
     } else {
-        return redirect()->back()->with('error', 'Tidak dapat mengambil pesanan ini.');
+        return redirect()->back()->with('error', 'Unable to take this order.');
     }
 }
 public function updateStatusToSelesai($id)
