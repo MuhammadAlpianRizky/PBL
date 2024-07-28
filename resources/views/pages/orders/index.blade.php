@@ -105,7 +105,7 @@
                                         @foreach ($orders as $order)
                                             <tr>
                                                 <td>{{ $order->id }}</td>
-                                                <td>{{ $order->nama }}</td>
+                                                <td>{{ ucwords(strtolower($order->nama)) }}</td>
                                                 <td>{{ $order->alamat }}</td>
                                                 @role('admin|user')
                                                 <td>{{ $order->no_hp }}</td>
@@ -113,7 +113,7 @@
                                                 @guest
                                                 <td>{{ substr($order->no_hp, 0, 3) . str_repeat('*', strlen($order->no_hp) - 6) . substr($order->no_hp, -3) }}</td>
                                                 @endguest
-                                                <td>{{ $order->tanggal }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($order->tanggal)->format('d-m-Y') }}</td>
                                                 <td>
                                                     @guest
                                                     @if ($order->status == 'pending')

@@ -10,12 +10,12 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Edit Schedule</h1>
-                <div class="section-header-breadcrumb">
+                <h1>Edit Pesanan</h1>
+                {{-- <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Schedules</a></div>
                     <div class="breadcrumb-item">Edit Schedule</div>
-                </div>
+                </div> --}}
             </div>
 
             <div class="section-body">
